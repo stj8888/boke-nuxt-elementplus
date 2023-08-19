@@ -23,23 +23,30 @@ export default defineNuxtConfig({
     typescript: {
 		   shim: false
 	},
-  css: ['animate.css/animate.css', "@wangeditor/editor/dist/css/style.css"],
+  // css: ["@wangeditor/editor/dist/css/style.css"],
   plugins: [
     { src: '@/plugins/wow.client.js', mode: 'client' }, // 只在client(浏览器)上生效
-    {src: "@/plugins/wang-editor.js", mode: 'client'},
-    {src:'@/plugins/lib-flexible.js',mode:'client'}
+    // {src: "@/plugins/wang-editor.js", mode: 'client'},
   ],
   build: {
+    analyze: true,
     //@ts-ignore
     publicPath: '/',
     transpile: [
         'echarts',
     ],
-    postcss: [
-      require('postcss-px2rem')({
-        remUnit: 192  // 之所以写192是因为设了pc最大宽度1920px
-      })
-    ],
+    optimization: {
+
+      splitChunks: {
+      
+      minSize: 100,
+      
+      maxSize: 500
+      
+      }
+      
+     },
+      
 }
 })
 

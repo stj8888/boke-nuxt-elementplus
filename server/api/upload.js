@@ -6,7 +6,7 @@ export default defineEventHandler(async(Event)=>{
     return {     
     "errno": 0, // 注意：值是数字，不能是字符串
     "data": {
-        "url":`${import.meta.env.VITE_APP_CALLBACK}/data/${Event.req.file.filename}`, // 图片 src ，必须
+        "url":`	${process.env.NODE_ENV==='development'?'http://localhost:3000':'http://47.113.217.202:3000'}/file/${Event.req.file.filename}`, // 图片 src ，必须
         "alt": "图片", // 图片描述文字，非必须
     }
     }

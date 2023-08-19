@@ -1,5 +1,5 @@
 <template>
-<h1 class="animate__animated animate__infinite animate__bounce animate__delay-2s" style="margin-left: 70px; color: red;">hello 帅哥 美女</h1>
+<h1 class="" style="margin-left: 70px; color: red;">hello 帅哥 美女</h1>
 <div class="right">
   <div class="bord" id="motionPath">
     <div id="lineDrawing"> <svg viewBox="0 0 280 100">
